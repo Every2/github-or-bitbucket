@@ -31,12 +31,12 @@ class GitorBitBucket:
                 file.write(f"bitbucket_email: {user_data['bitbucket_email']}\n")
 
         if 'github.com' in self.remote_url:
-            subprocess.run(['git', 'config', '--global', 'user.name', user_data['github_user']])
-            subprocess.run(['git', 'config', '--global', 'user.email', user_data['github_email']])
+            subprocess.run(['git', 'config', 'user.name', user_data['github_user']])
+            subprocess.run(['git', 'config', 'user.email', user_data['github_email']])
             print("Configurações de usuário definidas para GitHub.")
         elif 'bitbucket.org' in self.remote_url:
-            subprocess.run(['git', 'config', '--global', 'user.name', user_data['bitbucket_user']])
-            subprocess.run(['git', 'config', '--global', 'user.email', user_data['bitbucket_email']])
+            subprocess.run(['git', 'config', 'user.name', user_data['bitbucket_user']])
+            subprocess.run(['git', 'config', 'user.email', user_data['bitbucket_email']])
             print("Configurações de usuário definidas para Bitbucket.")
         else:
             print("URL remota desconhecida, mantendo as configurações atuais.")
